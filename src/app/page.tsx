@@ -1,65 +1,136 @@
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="container-blog py-16 md:py-24">
+
+      {/* Hero — just a name, a subtitle, and a photo */}
+      <section className="flex flex-col-reverse md:flex-row md:items-start justify-between gap-8 mb-16">
+        <div className="space-y-4">
+          <h1 className="text-3xl md:text-4xl">Hi, I'm Priyanshu Negi</h1>
+          <p className="text-lg text-muted max-w-lg">
+            CS Undergrad turned Developer. Passionate about Web Development and
+            System Software. I like building cool stuff and learning by working
+            on real projects every day.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden flex-shrink-0 border border-outline">
+          <Image
+            src="/profile.jpg"
+            alt="Priyanshu Negi"
+            width={144}
+            height={144}
+            className="object-cover w-full h-full"
+            priority
+          />
         </div>
-      </main>
+      </section>
+
+      {/* About */}
+      <section className="mb-16">
+        <h2 className="text-xl mb-4">About</h2>
+        <p className="text-on-background/80 leading-relaxed">
+          As a Computer Science undergraduate, I enjoy building practical
+          applications that solve real problems and are simple for users to
+          interact with. I focus on writing clean, efficient code and
+          continuously improving my problem-solving skills through consistent
+          practice. My interest lies in developing reliable web applications and
+          learning by working on real projects. I've solved hundreds of DSA
+          problems on{" "}
+          <Link href="https://leetcode.com" className="text-primary">
+            LeetCode
+          </Link>
+          .
+        </p>
+      </section>
+
+      {/* Work Experience */}
+      <section className="mb-16">
+        <h2 className="text-xl mb-6">Work Experience</h2>
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
+          <div>
+            <h3 className="text-base font-semibold">XDAS Technology Private Limited</h3>
+            <p className="text-sm text-muted">System Software Development Intern</p>
+          </div>
+          <span className="text-sm text-muted">June 2025 — July 2025</span>
+        </div>
+      </section>
+
+      {/* Education */}
+      <section className="mb-16">
+        <h2 className="text-xl mb-6">Education</h2>
+        <div className="space-y-6">
+          <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
+            <div>
+              <h3 className="text-base font-semibold">
+                Indian Institute of Information Technology (IIIT), Pune
+              </h3>
+              <p className="text-sm text-muted">
+                B.Tech in Computer Science and Engineering
+              </p>
+            </div>
+            <span className="text-sm text-muted">2024 — 2028</span>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
+            <div>
+              <h3 className="text-base font-semibold">Udai Pratap Public School</h3>
+              <p className="text-sm text-muted">Senior Secondary (Class 11–12)</p>
+            </div>
+            <span className="text-sm text-muted">2022 — 2024</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section className="mb-16">
+        <h2 className="text-xl mb-6">Projects</h2>
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-base font-semibold">
+              <Link href="https://github.com/priyanshunegi/totia">
+                Totia — AI Discord Assistant
+              </Link>
+            </h3>
+            <p className="text-sm text-muted mt-1">
+              Responsive AI chatbot using Google GenAI and Discord.py for
+              complex conversational flows with context retention.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-base font-semibold">
+              <Link href="/work/acms">
+                Automated Client Management System
+              </Link>
+            </h3>
+            <p className="text-sm text-muted mt-1">
+              End-to-end system for data processing and retrieval built with
+              Next.js, Zod, and Prisma during XDAS internship.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills — simple pills */}
+      <section className="mb-16">
+        <h2 className="text-xl mb-6">Skills</h2>
+        <div className="flex flex-wrap gap-2">
+          {[
+            "C", "C++", "JavaScript", "Python", "SQL",
+            "Next.js", "React.js", "Node.js", "Express.js",
+            "Prisma", "PostgreSQL", "MongoDB", "Tailwind CSS",
+            "GSAP", "Git", "GitHub", "Zod", "Vercel",
+          ].map((skill) => (
+            <span
+              key={skill}
+              className="px-3 py-1 text-sm border border-outline rounded-full text-muted"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </section>
+
     </div>
   );
 }
