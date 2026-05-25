@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Swiss Journal
 
-## Getting Started
+**An editorial, museum-grade portfolio built with Next.js and Framer Motion.**
 
-First, run the development server:
+Swiss Journal is a neo-minimalist digital space designed for high-density technical artifacts. It prioritizes typography (Inter, IBM Plex Mono, Silkscreen) and fluid motion over traditional UI abstractions.
+
+---
+
+## What Is This?
+
+A "text-first" interactive portfolio that functions like a living technical journal. It implements:
+
+- **Stackable Project Cards** — Progressive scroll-linked layout using Framer Motion
+- **Unified Library** — A single-route content engine for projects, research, and logs
+- **Keyboard-First Navigation** — Integrated shortcut system for rapid jumping
+- **Smooth Scroll Architecture** — Lenis-powered inertial scrolling with scroll-jacking for card stacking
+- **Neo-Minimalist Aesthetic** — High contrast dark mode with 0.5px architectural rules
+
+---
+
+### Tech Stack
+
+| Layer           | Technology                                      |
+| ----------------| ----------------------------------------------- |
+| **Framework**   | Next.js 15 (App Router)                         |
+| **Animation**   | Framer Motion 12 + Lenis                        |
+| **Styling**     | Tailwind CSS 4                                  |
+| **Components**  | Radix UI + shadcn/ui                            |
+| **Typography**  | Inter, IBM Plex Mono, Silkscreen (Google Fonts) |
+
+---
+
+## Keyboard Shortcuts
+
+The interface is designed for rapid navigation. Use these keys anywhere:
+
+- `[h]` — Jump to **Home**
+- `[l]` — Open the **Library**
+- `[c]` — **Copy email** to clipboard (with toast confirmation)
+- `[m]` — Open **Mail** client
+- `[t]` — Smooth scroll to **Top**
+
+---
+
+## Building Locally
+
+**Requirements:** Node.js 18+, npm/pnpm
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Content Management
 
-## Learn More
+All site data and content metadata is centralized for ease of update.
 
-To learn more about Next.js, take a look at the following resources:
+- **Site Metadata**: Edit `src/lib/data.ts` to update Bio, Experience, and Skills.
+- **Library Content**: Add `.mdx` files to `src/content/` (or update the library data array in `src/lib/data.ts`).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Detailed Docs
 
-## Deploy on Vercel
+For deep dives into specific implementations:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Design Philosophy](docs/explanation/design-philosophy.md) — The "Swiss Journal" aesthetic
+- [Animation Engine](docs/reference/architecture.md) — Framer Motion & Lenis integration
+- [Shortcut System](docs/reference/design-system.md) — Dictionary and behavior
