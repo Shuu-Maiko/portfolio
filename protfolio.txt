@@ -1,0 +1,53 @@
+PRIYANSHU NEGI
+priyanshunegi246@gmail.com | LinedIn | GitHub 
+Professional Summary
+Results-oriented Software Developer with a strong foundation in Full
+Stack Web Development and System Software. Proficient in the MERN
+Stack, Next.js, and Python, with hands-on experience in building
+type-safe applications using TypeScript, Zod, and Prisma. Proven
+ability to deliver production-grade code, demonstrated through a
+successful internship at XDAS Technology and AI-driven personal
+projects. Eager to contribute technical expertise in database
+management and backend architecture to a dynamic engineering team. 
+Technical Skills
+Languages: C, C++, JavaScript (ES6+), Python, SQL, HTML5, CSS3.
+Frontend: Next.js, React.js, Tailwind CSS, GSAP (Animations).
+Backend: Node.js, Express.js, Prisma ORM, Django/FastAPI.
+Databases: PostgreSQL, MongoDB, MySQL.
+AI & Tools: LangGraph, Discord.py, Git/GitHub, Postman, Zod 
+(Schema Validation), Vercel.
+Work Experience
+XDAS Technology Private Limited Remote, India 
+System Software Development Intern June 2025 – July 2025 
+Core Infrastructure Development: Actively contributed to the 
+architecture, testing, and refinement of core internal tools, 
+improving operational efficiency for the engineering team.
+Client Management Systems: Played a key role in developing the 
+Automated Client Management System (ACMS), streamlining client 
+data processing and retrieval.
+Content Management: Engineered updates for the internal Content 
+Management System (CMS) and optimized the company’s main 
+website structure, ensuring responsive design and faster load 
+times.
+Professional Collaboration: Adapted to a rigorous virtual 
+workflow, consistently delivering assigned modules with 
+responsibility and adhering to professional coding standards.
+Projects
+Totia - AI-Powered Discord Assistant Python, Discord.py, AI 
+APIs 
+Link to GitHub Repo 
+Developed a responsive AI chatbot integrated into the Discord 
+ecosystem to automate server interactions and user queries.
+Implemented Google GenAI to handle complex conversational 
+flows, state management, and context retention for more natural 
+user interactions.
+Designed a modular architecture allowing for easy integration 
+of new commands and features.
+Education
+B.Tech in CSE] 2028 
+Indian Institute of Information Technology Pune Akurdi, Maharashtra 
+Relevant Coursework: Data Structures & Algorithms, DBMS, 
+Operating Systems, Object-Oriented Programming.
+Certifications & Achievements
+Internship Completion Certificate: System Software Development, 
+XDAS Technology (2025).

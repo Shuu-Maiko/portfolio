@@ -1,33 +1,27 @@
 "use client";
 
 import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
+import { INFO, SOCIALS } from "@/lib/data";
 
 export function Footer() {
   return (
-    <footer className="w-full bg-background border-t border-outline py-10">
-      <div className="container-blog flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-        <span className="text-sm text-muted">
-          &copy; {new Date().getFullYear()} Priyanshu Negi
+    <footer className="w-full">
+      <Separator />
+      <div className="container-blog flex flex-col md:flex-row justify-between items-start md:items-center gap-6 py-10">
+        <span className="text-sm text-muted-foreground">
+          &copy; {new Date().getFullYear()} {INFO.name}
         </span>
         <div className="flex gap-6">
-          <Link
-            href="https://github.com/priyanshunegi"
-            className="text-sm text-muted no-underline hover:text-primary hover:no-underline transition-colors"
-          >
-            GitHub
-          </Link>
-          <Link
-            href="https://linkedin.com/in/priyanshunegi"
-            className="text-sm text-muted no-underline hover:text-primary hover:no-underline transition-colors"
-          >
-            LinkedIn
-          </Link>
-          <Link
-            href="mailto:priyanshunegi246@gmail.com"
-            className="text-sm text-muted no-underline hover:text-primary hover:no-underline transition-colors"
-          >
-            Email
-          </Link>
+          {SOCIALS.map((social) => (
+            <Link
+              key={social.name}
+              href={social.href}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {social.name}
+            </Link>
+          ))}
         </div>
       </div>
     </footer>

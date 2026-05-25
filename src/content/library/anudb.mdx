@@ -1,0 +1,28 @@
+---
+title: "Anudb.cpp — High-Performance Storage Engine"
+description: "An educational Relational Database Management System (RDBMS) built from scratch in C++17. Implements a custom B+Tree storage engine, SQL-like parser, and binary persistence with memory-mapped I/O."
+date: "2024-03-26"
+category: "Systems"
+tags: ["C++", "Database Engine", "Low-Level"]
+imageUrl: "/projects/anudb_final_master_v4.webp"
+githubUrl: "https://github.com/Shuu-Maiko/Anudb.cpp"
+featured: true
+---
+
+# Anudb.cpp
+
+Anudb is an educational deep-dive into the internals of database engines—specifically focusing on how storage engines, query execution, and binary persistence work without high-level abstractions.
+
+### Key Technical Implementations
+
+- **Custom B+Tree Storage Engine** — Hand-rolled clustered indexing with node splitting, merging, and range scan capabilities.
+- **Recursive Descent SQL Parser** — A custom built-in Lexer and Parser for SQL grammar, resolving polymorphic AST statements.
+- **Memory-Mapped I/O** — Leverages the OS page cache via `mmap()` in a custom `PageManager` to handle large datasets efficiently.
+- **Binary Serialization** — Implements length-prefixed strings and bitpacked primitives for compact on-disk storage.
+- **Full CRUD Support** — Supports standard SQL operations including `CREATE`, `INSERT`, `SELECT`, `UPDATE`, and `DELETE` with complex `WHERE` filters.
+
+### Performance & Benchmarks
+
+The storage engine is optimized for high-throughput sequential range scans, achieving over **1M+ operations/second** in local benchmarks by linking leaf nodes in a continuous list to enable $O(N)$ sequential reads.
+
+> "No high-level abstractions, just raw algorithmic trade-offs."

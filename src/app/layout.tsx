@@ -1,25 +1,37 @@
 import type { Metadata } from "next";
-import { Inter, IBM_Plex_Mono, Geist } from "next/font/google";
+import { Inter, IBM_Plex_Mono, Silkscreen } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { cn } from "@/lib/utils";
+import SmoothScroll from "@/components/common/SmoothScroll";
+import { FloatingDock } from "@/components/common/FloatingDock";
+import { KeyboardShortcuts } from "@/components/common/KeyboardShortcuts";
+import { INFO } from "@/lib/data";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+});
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
-  weight: ["400", "500"],
+  weight: ["400", "500", "700"],
+});
+
+const silkscreen = Silkscreen({
+  subsets: ["latin"],
+  variable: "--font-pixel",
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Priyanshu Negi",
-    template: "%s — Priyanshu Negi",
+    default: INFO.name,
+    template: `%s — ${INFO.name}`,
   },
-  description:
-    "Software Developer focused on full-stack web development and system software.",
+  description: INFO.description,
 };
 
 export default function RootLayout({
@@ -28,14 +40,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+    <html lang="en">
       <body
-        className={`${geist.variable} ${ibmPlexMono.variable} font-sans antialiased bg-background text-on-background`}
+        className={`${inter.variable} ${ibmPlexMono.variable} ${silkscreen.variable} font-sans antialiased`}
       >
-        <div className="flex min-h-screen flex-col">
+        <KeyboardShortcuts />
+        <SmoothScroll />
+        <div className="flex min-h-screen flex-col bg-background text-foreground relative">
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pb-24 md:pb-36">{children}</main>
           <Footer />
+          <FloatingDock />
         </div>
       </body>
     </html>
