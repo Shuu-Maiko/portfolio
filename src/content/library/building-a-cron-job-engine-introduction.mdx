@@ -8,22 +8,16 @@ imageUrl: "/projects/cron/project_header_final.png"
 featured: true
 ---
 
-![project_header_final.png](/projects/cron/project_header_final.png)
-
 First let me clear the Vision of the project and then later enter into the learnings of the project. This is just the part 0. I need to set the context of what I am going to build and how I'll present it.
 
 ## Vision
-
 Starting this project, I have several key learning goals in mind. At its core, the project will be a Cron job engine that allows users to create and manage various scheduled tasks. I want to use this to become deeply familiar with the Spring Boot framework and understand how leading backbone systems operate. As the project evolves, I plan to explore consensus algorithms and distributed systems, ultimately transforming the basic engine into a distributed architecture for superior fault tolerance and scalability.
 
 ## Planning
-
 For ease of making I'll make the project in three phases:
 
 ### Phase 1: The Monolithic MVP
-
 The goal here is just to make it work on a single machine.
-
 - Build the core scheduling engine using Spring Boot.
 - Set up a relational database to save job data so tasks aren't lost if the server restarts.
 - Create a basic dashboard or API to create, pause, and delete tasks.
@@ -33,31 +27,24 @@ The goal here is just to make it work on a single machine.
 Once the foundation is solid, I'll focus on making the system optimized and complete all unfinished/raw modules from Phase 1.
 
 ### Phase 3: Going Distributed
-
 The phase I'll love to work on the most
-
 - Deciding and Implementing a consensus algorithm (like Raft or Zookeeper) so the servers can safely agree on who triggers which task.
 - **No Single Point of Failure:** If one server crashes, another node will seamlessly pick up the workload.
 - **Horizontal Scaling:** Allowing multiple worker machines to share the load so we can handle thousands of tasks simultaneously without breaking a sweat.
 
 ## What is Cron
-
 Cron is a **daemon** (background service) that **executes scheduled tasks** at specified times or intervals. It runs in Unix-like systems and **relies on a file called the crontab (Cron table)** to manage scheduled jobs.
 
 Let's say you love gardening and every evening you need to water your plants depending on soil levels. But it's all tiring; you are too lazy to do that manually, so you hire a friend for the task, say Alice. Alice here is your cron worker/daemon. Every day when the clock ticks sharp 6 PM, she starts checking the hydration level of each plant and waters them. Here, watering the plants was a job that needed to be done everyday at a specific time, so you assign a friend who does it for you, and that friend is what we are building.
 
 ## Basics
-
 A Cron worker needs to know 3 main things:
-
 - **Job:** What needs to be done (i.e., watering the plants in our example).
 - **Trigger:** When it needs to be done (i.e., sharp at 6 PM).
 - **End Time:** How long to continue doing this (i.e., infinitely / until stopped).
-
 It is also helpful to know that there is a standard way most systems receive the Trigger and End Time as input as Cron Expression and Time ISO standard.
 
 ## The Anatomy of a Cron Expression
-
 A standard cron expression consists of five fields separated by spaces (some systems, like Quartz or AWS, support a 6th or 7th field for seconds and years). Each field represents a specific unit of time:
 
 ![gemini-code-1780743011596.jpg](/projects/cron/gemini-code-1780743011596.jpg)
@@ -65,9 +52,10 @@ A standard cron expression consists of five fields separated by spaces (some sys
 So an expression like every month at 12 PM is `0 12 1 * *`
 
 ### Breakdown of how this works:
-
 - **`0`** (Minute): Exactly at the 0th minute.
 - **`12`** (Hour): Exactly at 12 PM (using a 24-hour clock, 12 is noon).
 - **`1`** (Day of the month): Exactly on the 1st day of the month.
 - **`*`** (Month): Every month.
 - **`*`** (Day of the week): Any day of the week.
+
+Thank-you for the read a future update on the project would be drafted soon.
